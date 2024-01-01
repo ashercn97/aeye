@@ -73,11 +73,11 @@ class TextTemplate(AshBaseClass):
     # substitutes in the values for the template
     def __sub_in__(self, name, value):
         # replaces <name> with value in the template
-        self.sys_prompt  += self.template.replace("<" + name + ">", value)
+        self.sys_prompt  += self.template.replace("<" + name + ">", str(value))
 
     def __find_and_put__(self, name, value, new_template):
         # replaces <name> with value in the template
-        new_template = new_template.replace("<" + name + ">", value)
+        new_template = new_template.replace("<" + name + ">", str(value))
         return new_template
 
     # "type" checks the value
