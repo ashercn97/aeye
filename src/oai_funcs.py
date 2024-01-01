@@ -1,7 +1,10 @@
 from openai import OpenAI
 import os
+import openai
 
-# openai api = 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
+
+openai.api_key = os.getenv('OPENAI_API_KEY')
+
 
 # class of different system prompts, useful
 class SystemPrompts:
@@ -25,9 +28,7 @@ class UserPrompts:
 # setups the client
 def setup_client():
     # defaults to getting the key using os.environ.get("OPENAI_API_KEY")
-    client = OpenAI(
-        api_key="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"
-    )
+    client = OpenAI()
     return client
 
 
